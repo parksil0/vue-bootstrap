@@ -12,13 +12,15 @@ export const store = new Vuex.Store({
         },
         fetchedAskItem(state) {
             return state.askItem;
-        }
+        },
     },
     state: {
         news: [],
         ask: [],
+        jobs: [],
         user: {},
         askItem: {},
+        list: [],
     },
     mutations,
     actions,

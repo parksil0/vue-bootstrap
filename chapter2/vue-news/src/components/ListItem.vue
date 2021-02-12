@@ -3,8 +3,11 @@
         <ul class='new-list'>
             <li class='post' v-for='item in listItems' :key='item.id'>
                 <!-- 포인트 영역 -->
-                <div class="points">
+                <div class="points" v-if='item.points'>
                     {{ item.points }}
+                </div>
+                <div class="points" v-else>
+                    0
                 </div>
                 <!-- 기타 정보 영역 -->
                 <div>
@@ -35,23 +38,18 @@
 
 <script>
 export default {
-    created() {
-        const name = this.$route.name;
-        if(name === 'news') {
-            this.$store.dispatch('FETCH_NEWS');
-        } else if (name === 'ask') {
-            this.$store.dispatch('FETCH_ASK');
-        }
-    },
     computed: {
         listItems() {
-            const name = this.$route.name;
-            if(name === 'news') {
-                return this.$store.state.news;
-            } else if (name === 'ask') {
-                return this.$store.state.ask;
-            }
-            return null;
+            return this.$store.state.list;
+            // const name = this.$route.name;
+            // if(name === 'news') {
+            //     return this.$store.state.news;
+            // } else if (name === 'ask') {
+            //     return this.$store.state.ask;
+            // } else if (name === 'jobs') {
+            //     return this.$store.state.jobs;
+            // }
+            // return null;
         }
     }
 }

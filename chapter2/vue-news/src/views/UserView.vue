@@ -26,7 +26,7 @@ export default {
         this.$store.dispatch('FETCH_USER', userName);
     },
     components: {
-        UserProfile,
+        'UserProfile' : UserProfile,
     }
 }
 </script>
