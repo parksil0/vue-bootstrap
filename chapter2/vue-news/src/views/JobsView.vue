@@ -13,9 +13,6 @@ export default {
         ListItem,
     },
     mixins: [ListMixin],
-    // created() {
-    //     this.$store.dispatch('FETCH_JOBS');
-    // }
 }
 </script>
 
